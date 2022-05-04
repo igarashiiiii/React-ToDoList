@@ -9,4 +9,4 @@ trailingComma: all # 配列やオブジェクト・リテラルの末尾のカ�
 bracketSpacing: true # 中かっこの中にスペースを入れるか
 jsxBracketSameLine: false # JSXの `>` の後ろに開業を入れるか
 arrowParens: always # Arrow演算子の引数を必ずかっこで括るか
-endOfLine: lf # 改行コードを指定する
+endOfLine: lf,crif # 改行コードを指定する
