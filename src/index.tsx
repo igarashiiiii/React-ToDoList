@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RouterConfig } from './route/routing';
-import { ListsProvider } from "./gobalComponents/globalComponents"
+import { ListInformation } from './gobalComponents/listContent'
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container!);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ListsProvider>
+      <ListInformation>
         <RouterConfig />
-      </ListsProvider>
+      </ListInformation>
     </BrowserRouter>
   </React.StrictMode>,
 );
