@@ -6,6 +6,9 @@ import { dbModel } from '../model/DbModel';
 //MUI↓↓
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+//↓画面遷移
+import { Link } from 'react-router-dom';
+
 
 export const Done = () => {
  //↓グローバルsytateからTodo項目を配列を取得。MySQLへ移行予定
@@ -44,18 +47,20 @@ export const Done = () => {
     <div>
       <p>完了リスト</p>
       <Box>
-          {
-          list.filter(function(database: dbModel) {
-             database.status === "done" 
-            }).map((doneText:any) => 
-            <p key={doneText.id}>
-              {doneText.text}    
-              <Button variant="outlined" onClick={() => clickYet(doneText)}>yet</Button>
-              <Button variant="outlined" onClick={() => clickDelete(doneText)}>delete</Button>
-          </p>
-          )  
-          }       
+         {
+          list.filter((value: any) => value.status === "done").map(
+            (mapValue: any) =>
+              <p key={mapValue.id}>
+                {mapValue.text}
+                <Button variant="outlined" onClick={() => clickYet(mapValue)}>yet</Button>
+                <Button variant="outlined" onClick={() => clickDelete(mapValue)}>delete</Button>
+              </p>
+          )
+        }   
       </Box>
+      <Link to="/">fillInページに移動</Link><br />
+      <Link to="/yet">yetページに移動</Link><br />
+      <Link to="/done">doneページに移動</Link>
     </div>
   );
 };

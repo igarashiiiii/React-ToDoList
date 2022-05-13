@@ -7,7 +7,8 @@ import { dbModel } from '../model/DbModel';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-
+//↓画面遷移
+import { Link } from 'react-router-dom';
 
 
 //createIdの生成
@@ -31,12 +32,18 @@ export const FillIn = () => {
     const newDataBase:dbModel[] = [...list,addObject]
     setList(newDataBase)
     setThing("")
+    console.log(list)
   }
 
   return (
     <div>
-      <TextField id="standard-basic" label="Standard" variant="standard" onChange={(event) => setThing(event.target.value)} value={thing}/>
-      <Button variant="outlined" onClick={onClickText}>Add</Button>
+      <div>
+        <TextField id="standard-basic" label="Standard" variant="standard" onChange={(event) => setThing(event.target.value)} value={thing}/>
+        <Button variant="outlined" onClick={onClickText}>Add</Button>
+      </div>
+      <Link to="/">fillInページに移動</Link><br />
+      <Link to="/yet">yetページに移動</Link><br />
+      <Link to="/done">doneページに移動</Link>
     </div>
   );
 };

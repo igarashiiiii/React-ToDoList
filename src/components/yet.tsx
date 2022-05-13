@@ -6,6 +6,8 @@ import { dbModel } from '../model/DbModel';
 //MUI↓↓
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+//↓画面遷移
+import { Link } from 'react-router-dom';
 
 
 export const Yet = () => {
@@ -14,7 +16,7 @@ export const Yet = () => {
 
   //deleteボタン押したときの挙動
   function clickDelete(n:any){
-    let tempo:any = []
+    let tempo: any = []
     for(let i = 0; i < list.length; i++){
       if(list[i].id === n.id){
         continue
@@ -46,18 +48,19 @@ export const Yet = () => {
       <p>未完了リスト</p>
       <Box>
         {
-          list.filter(function (database:dbModel) {
-            database.status === "yet"
-          }).map((yetText:any) => (
-            yetText.text !== "" &&
-            <p key={yetText.id} >
-              {yetText.text}
-              <Button variant="outlined" onClick={() => clickDone(yetText)}>done</Button>
-              <Button variant="outlined" onClick={() => clickDelete(yetText)}>delete</Button>
-            </p>
-          ))
+          list.filter((value: any) => value.status === "yet").map(
+            (mapValue: any) =>
+              <p key={mapValue.id}>
+                {mapValue.text}
+                <Button variant="outlined" onClick={() => clickDone(mapValue)}>done</Button>
+                <Button variant="outlined" onClick={() => clickDelete(mapValue)}>delete</Button>
+              </p>
+          )
         }
       </Box>
+      <Link to="/">fillInページに移動</Link><br />
+      <Link to="/yet">yetページに移動</Link><br />
+      <Link to="/done">doneページに移動</Link>
     </div>
   );
 };
