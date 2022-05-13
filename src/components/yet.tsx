@@ -6,13 +6,11 @@ import { dbModel } from '../model/DbModel';
 //MUI↓↓
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-
 
 
 export const Yet = () => {
 //↓グローバルsytateからTodo項目を配列を取得。MySQLへ移行予定
-  let [list,setList] = useContext(ListContext)
+  let { list, setList } = useContext(ListContext)
 
   //deleteボタン押したときの挙動
   function clickDelete(n:any){

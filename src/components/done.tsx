@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 export const Done = () => {
  //↓グローバルsytateからTodo項目を配列を取得。MySQLへ移行予定
-  let [list,setList] = useContext(ListContext)
+  let { list, setList } = useContext(ListContext)
 
   //deleteボタン押したときの挙動
   function clickDelete(n:any){
