@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react"
 //model↓↓
-import { dbModel } from '../model/DbModel';
+import { dbModel, Context } from '../model/DbModel';
 
-export const ListContext = createContext({});
+export const ListContext = createContext<Context | any>(undefined);
 
 //Todo項目を格納する配列(初期値)。MySQLへ移行予定
 let database:dbModel[] = [
@@ -25,7 +25,7 @@ let database:dbModel[] = [
 
 export const ListInformation = (props:any) => {
   const {children} = props;
-  const [list, setList] = useState(database)
+  const [list, setList] = useState<dbModel[]>(database)
   return (
     <ListContext.Provider value={{list, setList}}>
       {children}

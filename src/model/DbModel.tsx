@@ -7,3 +7,7 @@ export interface dbModel {
 }
 
 //ToDoリストを記載しているときに呼ばれるuseStateの型宣言
+export type Context = {
+  list: dbModel[],
+  setList: React.Dispatch<React.SetStateAction<dbModel[]>>,
+}

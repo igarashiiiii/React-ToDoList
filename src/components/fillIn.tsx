@@ -14,7 +14,7 @@ import TextField from '@mui/material/TextField';
 let createId: number = 3
 
 export const FillIn = () => {
-  //↓グローバルsytateからTodo項目を配列を取得。MySQLへ移行予定
+  //↓グローバルstateからTodo項目を配列を取得。MySQLへ移行予定
   let { list, setList } = useContext(ListContext)
   //↓ToDoを入力
   const [thing, setThing] = useState("");
