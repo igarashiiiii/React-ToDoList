@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react"
 //model↓↓
 import { dbModel } from '../model/DbModel';
 
-export const ListContext = createContext();
+export const ListContext = createContext({});
 
 //Todo項目を格納する配列(初期値)。MySQLへ移行予定
 let database:dbModel[] = [
